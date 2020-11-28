@@ -1,0 +1,129 @@
+/* Reset */
+body,img,p,h1,h2,h3,h4,h5,h6,ul,ol {margin:0; padding:0; list-style:none; border:none;}
+/* End Reset */
+
+
+a {color:white;}
+
+
+/* Colors */
+
+.color-blue   {
+	background:#81BBF5;
+  animation: fadein 3s;
+	}
+	@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.color-green h3
+	{color:#000;}
+.color-red h3,
+.color-blue h3,
+.color-orange h3
+	{color:#FFF;}
+/* End Colors */
+
+
+/* Head section */
+#head {
+    background:blue;
+    height: 200px;
+	color:#FFFFFF
+}
+#head a{ color:#FFFF00;}
+#head h1 {
+    line-height: 100px;
+    color:black;
+    text-align: center;
+    background: url(img/inettuts.png) no-repeat center;
+    text-indent: -9999em
+}
+/* End Head Section */
+
+/* Columns section */
+#columns .column {
+	text-align:center;
+    float: center;
+    width: 100%;
+		/* Min-height: */
+		min-height: 400px;
+		height: auto !important; 
+		height: 400px;
+		margin-bottom: 30px;
+}
+
+/* Column dividers (background-images) : */
+
+
+#columns .widget {
+    margin: 30px 20px 0 20px;
+    padding: 2px 2px 20px 2px;
+
+}
+#columns .widget .widget-head {
+	position:relative;
+    color: blue;
+    overflow: hidden;
+    width: 1000px;
+    height: 40px;
+    line-height: 40px;
+}
+#columns .widget .widget-head h3 {
+	position:relative;
+    padding: 0 5px;
+    float: left;
+}
+#columns .widget .widget-content {
+	position:relative;
+    background: #333 url(img/widget-content-bg.png) repeat-x;
+    padding: 0 5px;
+    color: #DDD;
+    -moz-border-radius-bottomleft: 2px;
+    -moz-border-radius-bottomright: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    -webkit-border-bottom-right-radius: 2px;
+    line-height: 1.2em;
+    overflow: hidden;
+}
+.container {
+	border-radius:10px;
+	top:20px;
+	width:100%;
+	left: 0;
+	right: 0;
+	text-align: center;
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #fff;
+	position: absolute;
+}
+#columns .widget .widget-content p {
+    padding: 0.8em 0;
+    border-bottom: 1px solid #666;
+}
+
+
+#columns .widget .widget-content ul {
+    padding: 5px 0 5px 20px;
+    list-style: disc;
+}
+#columns .widget .widget-content ul li {padding: 3px 0;}
+#columns .widget .widget-content ul.images {
+    padding: 7px 0 0 0;
+    width:100%;
+    list-style: none;
+    height: 1%;
+}
+#columns .widget .widget-content ul.images li {
+    display: inline;
+
+}
+
+/* End Columns section */
+

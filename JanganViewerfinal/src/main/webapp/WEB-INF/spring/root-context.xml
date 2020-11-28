@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:mybatis-spring="http://mybatis.org/schema/mybatis-spring"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://mybatis.org/schema/mybatis-spring http://mybatis.org/schema/mybatis-spring-1.2.xsd
+		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.3.xsd">
+
+	<!-- Root Context: defines shared resources visible to all other web components -->
+
+	<bean
+		class="org.springframework.jdbc.datasource.DriverManagerDataSource"
+		id="dataSource">
+		<property value="oracle.jdbc.driver.OracleDriver" name="driverClassName" />
+		<property value="jdbc:oracle:thin:@localhost:1521:xe" name="url" />
+		<!-- 오라클 사용자 이름 -->
+		<property value="leezihun" name="username" />
+		<!-- 오라클 사용자 비밀번호 -->
+		<property value="1234" name="password" />
+	</bean>
+
+	<bean class="org.mybatis.spring.SqlSessionFactoryBean"
+		id="sqlSessionFactory">
+		<property name="dataSource" ref="dataSource" />
+		<property name="configLocation" value="classpath:util/SqlMapConfig.xml" />
+		<property name="mapperLocations" value="classpath*:sql/*.xml" />
+	</bean>
+
+	<mybatis-spring:scan
+		base-package="com.my.spring.mapper" />
+
+	<bean class="org.mybatis.spring.SqlSessionTemplate">
+		<constructor-arg index="0" ref="sqlSessionFactory" />
+	</bean>
+	<!-- mybatis ORM DB 연동 프레임웍 연결 및 종료(close) -->
+	<bean id="transactionManager"
+		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource" />
+	</bean>
+	
+	<!-- 트랜잭션을 처리할 객체를 설정 -->
+	<tx:annotation-driven transaction-manager="transactionManager" />
+	
+</beans>

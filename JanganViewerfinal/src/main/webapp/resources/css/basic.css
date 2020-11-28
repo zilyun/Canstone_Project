@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+  
+      .jb-font-1 {
+        font-family: "Malgun Gothic";
+      }
+      .jb-font-2 {
+        font-family: "Noto Sans CJK KR";
+      }
+      .jb-normal {
+        font-weight: normal;
+      }
+      .jb-bold {
+        font-weight: bold;
+      }
+      .jb-100 {
+        font-weight: 100;
+      }
+      .jb-200 {
+        font-weight: 200;
+      }
+      .jb-300 {
+        font-weight: 300;
+      }
+      .jb-400 {
+        font-weight: 400;
+      }
+      .jb-500 {
+        font-weight: 500;
+      }
+      .jb-600 {
+        font-weight: 600;
+      }
+      .jb-700 {
+        font-weight: 700;
+      }
+      .jb-800 {
+        font-weight: 800;
+      }
+      .jb-900 {
+        font-weight: 900;
+      }
